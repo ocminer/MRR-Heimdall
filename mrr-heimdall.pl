@@ -58,7 +58,7 @@ for ( my $i = 1 ; $i <= $nm ; $i++ ) {
 		my $message = $imap->get($i);
        		$message = "$message"; # our message
 		#printf ("The message is: $message");
-		if( $message =~ /OCID:(.+?)]/i ) {
+		if( $message =~ /OCID:(.+?)]/i && !$message =~ /OFFLINE/ ) {
   			my $rigid = $1;
 			my $do = "start";
 			#printf("The rigid is: $rigid\n");
